@@ -4,7 +4,6 @@ stage 'Dev'
 node {
     checkout scm
     mvn 'clean package'
-    mvn 'sonar:sonar'
     dir('target') {stash name: 'war', includes: 'x.war'}
 }
 
@@ -15,7 +14,7 @@ parallel(longerTests: {
     runTests(20)
 })
 
-stage name: 'Staging', concurrency: 1
+stage name: 'Staging', concurrency: 2
 node {
     deploy 'staging'
 }
