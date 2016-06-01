@@ -4,6 +4,7 @@ stage 'Dev'
 node {
     checkout scm
     mvn 'clean package'
+    sh 'mvn sonar:sonar'
     dir('target') {stash name: 'war', includes: 'x.war'}
 }
 
