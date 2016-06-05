@@ -24,6 +24,7 @@ input message: "Ready for Dev Deployment?"
 
 stage name: 'Dev Deployment', concurrency: 1
 node {
+    sh 'cd /home/azureuser'
     ansiblePlaybook installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/home/azureuser/playbook1.yml', sudoUser: null
 }
 
