@@ -1,53 +1,42 @@
 #!groovy
 
-stage 'Dev'
+stage 'Dev Build'
 node {
-    checkout scm
-    mvn 'clean package'
-    dir('target') {stash name: 'war', includes: 'x.war'}
+    try{
+        checkout scm
+        mvn 'clean compile'
+    }catch(Exception e){
+        echo "in exception"
+    }
 }
 
-stage 'QA'
-parallel(longerTests: {
-    runTests(30)
-}, quickerTests: {
-    runTests(20)
-})
-
-stage name: 'Staging', concurrency: 2
+stage 'Unit Testing'
 node {
-    deploy 'staging'
+    try{
+         mvn 'test'
+    }catch(Exception e){
+        echo "In exception"
+    }
+   
 }
 
-input message: "Does staging look good?"
-try {
-    checkpoint('Before production')
-} catch (NoSuchMethodError _) {
-    echo 'Checkpoint feature available in CloudBees Jenkins Enterprise.'
+stage 'Static Code Analysis - Sonar'
+node {
+    try{
+        mvn 'sonar:sonar -Dsonar.host.url=http://cloudbagmtweb.southeastasia.cloudapp.azure.com/sonar/'
+    }catch(Exception e){
+        echo "in Exception"
+    }
+   
 }
 
-stage name: 'Production', concurrency: 1
+input message: "Ready for Dev Deployment?"
+
+stage name: 'Dev Deployment', concurrency: 1
 node {
-    echo 'Production server looks to be alive'
-    deploy 'production'
-    echo "Deployed to production"
+   echo 'deploying..'
 }
 
 def mvn(args) {
     sh "${tool 'Maven'}/bin/mvn ${args}"
-}
-
-def runTests(duration) {
-    node {
-        sh "sleep ${duration}"
-        }
-    }
-
-def deploy(id) {
-    unstash 'war'
-    sh "cp x.war /tmp/${id}.war"
-}
-
-def undeploy(id) {
-    sh "rm /tmp/${id}.war"
 }
