@@ -24,7 +24,7 @@ input message: "Ready for Dev Deployment?"
 
 stage name: 'Dev Deployment', concurrency: 1
 node {
-    sh '${tool 'Ansible'} ansible-playbook playbook1.yml'
+    ansiblePlaybook installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/home/azureuser/playbook.yml', sudoUser: null
 }
 
 def mvn(args) {
