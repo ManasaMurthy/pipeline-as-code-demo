@@ -1,6 +1,6 @@
 #!groovy
 
-stage 'Dev Build'
+/*stage 'Dev Build'
 node {
     try{
         checkout scm
@@ -18,13 +18,13 @@ node {
         echo "In exception"
     }
    
-}
+}*/
 
 input message: "Ready for Dev Deployment?"
 
 stage name: 'Dev Deployment', concurrency: 1
 node {
-    sh 'ansible-playbook -i playbook1.yml'
+    sh 'ansible-playbook playbook1.yml'
 }
 
 def mvn(args) {
