@@ -20,21 +20,11 @@ node {
    
 }
 
-stage 'Static Code Analysis - Sonar'
-node {
-    try{
-        mvn 'sonar:sonar -Dsonar.host.url=http://cloudbagmtweb.southeastasia.cloudapp.azure.com/sonar/'
-    }catch(Exception e){
-        echo "in Exception"
-    }
-   
-}
-
 input message: "Ready for Dev Deployment?"
 
 stage name: 'Dev Deployment', concurrency: 1
 node {
-   echo 'deploying..'
+   sh "ansible-playbook playbook1.yml"
 }
 
 def mvn(args) {
