@@ -24,7 +24,7 @@ input message: "Ready for Dev Deployment?"
 
 stage name: 'Dev Deployment', concurrency: 1
 node {
-   ansiblePlaybook credentialsId: '9e6a8036-c691-468b-ad4c-43a84ed08256', installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/home/azureuser/playbook.yml --extra-vars warfile=CounterWebApp', sudoUser: null
+   ansiblePlaybook credentialsId: '9e6a8036-c691-468b-ad4c-43a84ed08256', extras: 'warfile=CounterWebApp', installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/home/azureuser/playbook.yml', sudoUser: null
 }
 
 def mvn(args) {
