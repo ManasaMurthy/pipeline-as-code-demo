@@ -24,7 +24,7 @@ input message: "Ready for Dev Deployment?"
 
 stage name: 'Dev Deployment', concurrency: 1
 node {
-    sh "ansible-playbook /var/lib/jenkins/playbook1.yml"
+    sh "ansible-playbook /var/lib/jenkins/playbook1.yml -vvv"
 }
 
 def mvn(args) {
