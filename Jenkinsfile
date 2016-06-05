@@ -24,7 +24,8 @@ input message: "Ready for Dev Deployment?"
 
 stage name: 'Dev Deployment', concurrency: 1
 node {
-   sh "ansible-playbook playbook1.yml"
+    echo "JENKINS_HOME"
+    sh "ansible-playbook /home/azureuser/playbook1.yml"
 }
 
 def mvn(args) {
