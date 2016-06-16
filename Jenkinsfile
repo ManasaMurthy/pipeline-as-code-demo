@@ -3,9 +3,9 @@
 stage 'Dev Build'
 node {
     try{
-       sh 'git checkout newBranch'
-       sh 'git merge master'
-       sh 'git push origin newBranch'
+        checkout scm newBranch'
+       //sh 'git merge master'
+      // sh 'git push origin newBranch'
         //push -u origin newBranch 
         //mvn 'clean compile'
     }catch(Exception e){
