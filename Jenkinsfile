@@ -5,6 +5,8 @@ node {
     try{
          checkout([$class: 'GitSCM',
          branches: [[name: '*/newBranch']]])
+         merge([$class: 'GitSCM',
+         branches :[[name: '*/newBranch']]])
          //doGenerateSubmoduleConfigurations: false,
          //extensions: [[$class: 'RelativeTargetDirectory', 
          //relativeTargetDir: 'subdirectory1']], submoduleCfg: []) 
