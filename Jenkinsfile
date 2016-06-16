@@ -5,7 +5,7 @@ node {
     try{
         checkout scm
         merge newBranch
-        push -u origin newBranch 
+        //push -u origin newBranch 
         //mvn 'clean compile'
     }catch(Exception e){
         throw e
