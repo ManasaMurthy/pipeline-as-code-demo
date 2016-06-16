@@ -8,7 +8,7 @@ node {
         git push -u origin newBranch 
         //mvn 'clean compile'
     }catch(Exception e){
-        echo "in exception"
+        throw e
     }
 }
 
