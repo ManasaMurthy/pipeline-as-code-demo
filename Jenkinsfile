@@ -1,5 +1,11 @@
 #!groovy
-jettyUrl = 'http://localhost:8081/'
+
+stage gitmerge
+
+git checkout master 
+git merge newBranch
+git push -u origin master
+/*jettyUrl = 'http://localhost:8081/'
 
 stage 'Dev'
 node ('docker-cloud'){
@@ -64,5 +70,8 @@ def runWithServer(body) {
         body.call "${jettyUrl}${id}/"
     } finally {
         undeploy id
-    }
+    }*/
+    def mvn(args) {
+    sh "${tool 'Maven 3.x'}/bin/mvn ${args}"
+}
 }
