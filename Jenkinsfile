@@ -3,9 +3,9 @@
 stage 'Dev Build'
 node {
     try{
-        checkout scm
-        merge newBranch
-        push -u origin master 
+        git checkout scm
+        git merge newBranch
+        git push -u origin newBranch 
         //mvn 'clean compile'
     }catch(Exception e){
         echo "in exception"
