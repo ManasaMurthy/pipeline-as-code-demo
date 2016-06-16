@@ -4,11 +4,11 @@ stage 'Dev Build'
 node {
     try{
          checkout([$class: 'GitSCM',
-         branches: [[name: '*/newBranch']],
-         doGenerateSubmoduleConfigurations: false,
-         extensions: [[$class: 'RelativeTargetDirectory', 
-         relativeTargetDir: 'subdirectory1']], submoduleCfg: [], 
-         userRemoteConfigs: [[url: 'repo1.git']]])
+         branches: [[name: '*/newBranch']])
+         //doGenerateSubmoduleConfigurations: false,
+         //extensions: [[$class: 'RelativeTargetDirectory', 
+         //relativeTargetDir: 'subdirectory1']], submoduleCfg: []) 
+         //userRemoteConfigs: [[url: 'repo1.git']]])
        //sh 'git merge master'
       // sh 'git push origin newBranch'
         //push -u origin newBranch 
