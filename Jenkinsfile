@@ -1,7 +1,7 @@
 #!groovy
 
 stage 'gitmerge'
-
+@NonCPS
 node (){
   git checkout master 
   git merge newBranch
