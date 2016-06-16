@@ -1,7 +1,7 @@
 #!groovy
 
 stage 'gitmerge'
-@NonCPS
+//@NonCPS
 node (){
   echo "before checkout"
   git checkout master 
