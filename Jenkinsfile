@@ -1,6 +1,6 @@
 #!groovy
 
-stage gitmerge
+stage 'gitmerge'
 
 git checkout master 
 git merge newBranch
@@ -73,5 +73,4 @@ def runWithServer(body) {
     }*/
     def mvn(args) {
     sh "${tool 'Maven 3.x'}/bin/mvn ${args}"
-}
 }
