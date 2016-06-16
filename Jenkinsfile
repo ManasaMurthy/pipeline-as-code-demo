@@ -4,7 +4,7 @@ stage 'gitmerge'
 //@NonCPS
 node (){
   echo "before checkout"
-  git checkout master 
+  //git checkout master 
   git merge newBranch
  git push -u origin master  
 }
