@@ -2,9 +2,12 @@
 
 stage 'gitmerge'
 
-git checkout master 
-git merge newBranch
-git push -u origin master
+node (){
+  git checkout master 
+  git merge newBranch
+ git push -u origin master  
+}
+
 /*jettyUrl = 'http://localhost:8081/'
 
 stage 'Dev'
