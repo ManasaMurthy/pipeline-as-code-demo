@@ -5,11 +5,11 @@ node {
   checkout(
      [
         $class: 'GitSCM', 
-        branches: [[name: '*/newBranch']],
-        doGenerateSubmoduleConfigurations: false,
-        extensions: [[$class: 'RelativeTargetDirectory',
+        branches: [[name: '*/newBranch']]
+       // doGenerateSubmoduleConfigurations: false,
+       // extensions: [[$class: 'RelativeTargetDirectory',
        // relativeTargetDir: 'subdirectory1']],
-        submoduleCfg: [], 
+       // submoduleCfg: [], 
       //  userRemoteConfigs: [[url: 'repo1.git']]
       ]
    )
