@@ -10,6 +10,7 @@ node (){
  //sh 'git reset --merge'
  //sh 'git checkout newBranch2'
  //sh 'git merge newBranch'
+ sh 'git reset --merge'
  sh 'git checkout master'
  sh 'git merge newBranch'
  sh 'git push'
