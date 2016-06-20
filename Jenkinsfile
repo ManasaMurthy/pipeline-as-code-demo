@@ -3,10 +3,12 @@
 stage 'gitmerge'
 //@NonCPS
 node (){
-  echo "before checkout"
+  //echo "before checkout"
   //git checkout master 
-  git merge newBranch
- git push -u origin master  
+  //git merge newBranch
+ //git push -u origin master
+ sh 'git checkout newBranch2'
+ sh 'git merge newBranch'
 }
 
 /*jettyUrl = 'http://localhost:8081/'
