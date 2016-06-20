@@ -2,19 +2,7 @@
 
 stage 'Dev Build'
 node {
-    try{
-       scm checkout master;
-    }
-         //checkout([$class: 'GitSCM',
-         //branches: [[name: '*/newBranch']]])
-         //git merge master
-       //sh 'git merge master'
-      // sh 'git push origin newBranch'
-        //push -u origin newBranch 
-        //mvn 'clean compile'
-    }catch(Exception e){
-        throw e
-    }
+   scm checkout newBranch
 }
 
 /*stage 'Unit Testing'
