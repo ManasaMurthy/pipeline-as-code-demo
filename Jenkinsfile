@@ -8,9 +8,9 @@ node {
         branches: [[name: '*/newBranch']],
         doGenerateSubmoduleConfigurations: false,
         extensions: [[$class: 'RelativeTargetDirectory',
-        relativeTargetDir: 'subdirectory1']],
+       // relativeTargetDir: 'subdirectory1']],
         submoduleCfg: [], 
-        userRemoteConfigs: [[url: 'repo1.git']]
+      //  userRemoteConfigs: [[url: 'repo1.git']]
       ]
    )
 }
