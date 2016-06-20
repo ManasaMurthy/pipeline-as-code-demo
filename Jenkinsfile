@@ -2,19 +2,7 @@
 
 stage 'Dev Build'
 node {
-  checkout(
-     [
-        $class: 'GitSCM', 
-        branches: [[name: '*/newBranch']]
-       // doGenerateSubmoduleConfigurations: false,
-       // extensions: [[$class: 'RelativeTargetDirectory',
-       // relativeTargetDir: 'subdirectory1']],
-       // submoduleCfg: [], 
-      //  userRemoteConfigs: [[url: 'repo1.git']]
-      ]
-   )
-   
-  git scm merge newBranch
+  checkout scm
 }
 
 /*stage 'Unit Testing'
