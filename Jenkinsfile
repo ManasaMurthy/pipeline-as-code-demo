@@ -3,16 +3,7 @@
 stage 'Dev Build'
 node {
     try{
-       scm {
-        git {
-            branch('newBranch')
-            extensions {
-                mergeOptions {
-                    remote('master')
-                    branch('newBranch')
-                }
-            }
-        }
+       scm checkout master;
     }
          //checkout([$class: 'GitSCM',
          //branches: [[name: '*/newBranch']]])
