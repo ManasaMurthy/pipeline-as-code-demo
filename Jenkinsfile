@@ -14,17 +14,7 @@ node {
       ]
    )
    
-   merge(
-     [
-        $class: 'GitSCM', 
-        branches: [[name: '*/newBranch']]
-       // doGenerateSubmoduleConfigurations: false,
-       // extensions: [[$class: 'RelativeTargetDirectory',
-       // relativeTargetDir: 'subdirectory1']],
-       // submoduleCfg: [], 
-      //  userRemoteConfigs: [[url: 'repo1.git']]
-      ]
-   )
+  git scm merge newBranch
 }
 
 /*stage 'Unit Testing'
