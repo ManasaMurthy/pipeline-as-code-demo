@@ -3,7 +3,7 @@
 stage 'Dev Build'
 node {
     try{
-        git checkout newBranch
+        git checkout -b newBranch
          //checkout([$class: 'GitSCM',
          //branches: [[name: '*/newBranch']]])
          //git merge master
