@@ -5,7 +5,7 @@ node {
   //pipeline = load 'pipeline.groovy'
     //sh 'git checkout -b testBranch6'
     //sh 'git push testBranch6'
-    sh 'git merge newBranch'
+    sh 'git checkout newBranch'
 }
 
 /*stage 'Unit Testing'
