@@ -3,8 +3,9 @@
 stage 'Dev Build'
 node {
   //pipeline = load 'pipeline.groovy'
-    sh 'git checkout -b testBranch6'
-   sh 'git push testBranch6'
+    //sh 'git checkout -b testBranch6'
+    //sh 'git push testBranch6'
+    sh 'git merge newBranch'
 }
 
 /*stage 'Unit Testing'
