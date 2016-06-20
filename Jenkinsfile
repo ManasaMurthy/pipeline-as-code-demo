@@ -7,9 +7,12 @@ node (){
   //git checkout master 
   //git merge newBranch
  //git push -u origin master
- sh 'git reset --merge'
- sh 'git checkout newBranch2'
+ //sh 'git reset --merge'
+ //sh 'git checkout newBranch2'
+ //sh 'git merge newBranch'
+ sh 'git checkout master'
  sh 'git merge newBranch'
+ sh 'git push'
 }
 
 /*jettyUrl = 'http://localhost:8081/'
