@@ -2,7 +2,7 @@
 
 stage 'Dev Build'
 node {
-   scm checkout newBranch
+   sh "git checkout https://github.com/ManasaMurthy/pipeline-as-code-demo/tree/newBranch"
 }
 
 /*stage 'Unit Testing'
