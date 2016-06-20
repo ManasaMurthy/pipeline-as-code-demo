@@ -13,6 +13,18 @@ node {
       //  userRemoteConfigs: [[url: 'repo1.git']]
       ]
    )
+   
+   merge(
+     [
+        $class: 'GitSCM', 
+        branches: [[name: '*/newBranch']]
+       // doGenerateSubmoduleConfigurations: false,
+       // extensions: [[$class: 'RelativeTargetDirectory',
+       // relativeTargetDir: 'subdirectory1']],
+       // submoduleCfg: [], 
+      //  userRemoteConfigs: [[url: 'repo1.git']]
+      ]
+   )
 }
 
 /*stage 'Unit Testing'
