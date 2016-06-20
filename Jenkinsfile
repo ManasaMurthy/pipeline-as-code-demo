@@ -2,7 +2,17 @@
 
 stage 'Dev Build'
 node {
-   sh "git checkout https://github.com/ManasaMurthy/pipeline-as-code-demo/tree/newBranch"
+  checkout(
+     [
+        $class: 'GitSCM', 
+        branches: [[name: '*/newBranch']],
+        doGenerateSubmoduleConfigurations: false,
+        extensions: [[$class: 'RelativeTargetDirectory',
+        relativeTargetDir: 'subdirectory1']],
+        submoduleCfg: [], 
+        userRemoteConfigs: [[url: 'repo1.git']]
+      ]
+   )
 }
 
 /*stage 'Unit Testing'
