@@ -2,7 +2,8 @@
 
 stage 'Dev Build'
 node {
-  checkout scm
+  //pipeline = load 'pipeline.groovy'
+  git checkout newBranch
 }
 
 /*stage 'Unit Testing'
