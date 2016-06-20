@@ -6,6 +6,7 @@ node {
     //sh 'git checkout -b testBranch6'
     //sh 'git push testBranch6'
     sh 'git checkout newBranch'
+    sh 'git merge master'
 }
 
 /*stage 'Unit Testing'
